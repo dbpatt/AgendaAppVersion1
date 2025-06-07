@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/paper_background"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_header_background"
+            android:fontFamily="@font/reenie_beanie"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Notification Settings"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#5595B9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/notificationRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogTitle">
+
+            <RadioButton
+                android:id="@+id/radioNone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No notifications"
+                android:textSize="24sp"
+                android:fontFamily="@font/reenie_beanie"
+                android:textColor="@color/task_title_text_color"
+                android:layout_marginBottom="12dp"
+                android:buttonTint="#5595B9" />
+
+            <RadioButton
+                android:id="@+id/radioAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All tasks"
+                android:textSize="24sp"
+                android:fontFamily="@font/reenie_beanie"
+                android:textColor="@color/task_title_text_color"
+                android:layout_marginBottom="12dp"
+                android:buttonTint="#5595B9" />
+
+            <RadioButton
+                android:id="@+id/radioPinnedDated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dated and Pinned tasks only"
+                android:textSize="24sp"
+                android:fontFamily="@font/reenie_beanie"
+                android:textColor="@color/task_title_text_color"
+                android:buttonTint="#5595B9" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/task_dialog_pill_button"
+            android:fontFamily="@font/reenie_beanie"
+            android:text="Cancel"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="0dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textColor="#F65555"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notificationRadioGroup" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/task_dialog_pill_button"
+            android:fontFamily="@font/reenie_beanie"
+            android:text="Save"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="0dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textColor="#4CAF50"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/paper_background"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_header_background"
+            android:fontFamily="@font/reenie_beanie"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Quick Add Task"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#5595B9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTaskName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:fontFamily="@font/reenie_beanie"
+            android:hint="Task Name"
+            android:textColorHint="#808080"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:minLines="1"
+            android:maxLines="3"
+            android:scrollHorizontally="false"
+            android:textSize="24sp"
+            android:textColor="@color/task_title_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogTitle" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTaskName" />
+
+        <TextView
+            android:id="@+id/dueDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/reenie_beanie"
+            android:textSize="22sp"
+            android:textColor="@color/task_title_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <LinearLayout
+            android:id="@+id/dateTimeContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/setDateButton"
+            app:layout_constraintStart_toEndOf="@+id/dueDateLabel"
+            app:layout_constraintTop_toTopOf="@+id/dueDateLabel">
+
+            <TextView
+                android:id="@+id/dueDateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/reenie_beanie"
+                android:text="None"
+                android:textSize="22sp"
+                android:textColor="@color/task_title_text_color" />
+
+            <TextView
+                android:id="@+id/dueTimeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/reenie_beanie"
+                android:visibility="gone"
+                android:textSize="22sp"
+                android:textColor="@color/task_title_text_color" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/setDateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/task_dialog_pill_button"
+            android:fontFamily="@font/reenie_beanie"
+            android:text="Set Date"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="0dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textColor="#5595B9"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateTimeContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dateTimeContainer" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateTimeContainer" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/task_dialog_pill_button"
+            android:fontFamily="@font/reenie_beanie"
+            android:text="Cancel"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="0dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textColor="#F65555"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/task_dialog_pill_button"
+            android:fontFamily="@font/reenie_beanie"
+            android:text="Save"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="0dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textColor="#4CAF50"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
